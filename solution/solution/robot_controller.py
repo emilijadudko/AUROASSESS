@@ -30,11 +30,14 @@ SCAN_BACK = 2
 SCAN_RIGHT = 3
 
 class State(Enum):
+    # should resemble robochart states
+    # double check
     FORWARD = 0
     TURNING = 1
     # ADDED
     COLLECTING = 3
     MOVE_TO_ITEM = 4
+    DROPPING = 5
 
 
 class RobotController(Node):
@@ -178,6 +181,9 @@ class RobotController(Node):
 
             case DROPPING:
                 #to drop the item once the zone has been reaches
+                #reach zone first then drop
+                #self.get_logger().info("dropping item")
+                
             case _:
                 pass
         
